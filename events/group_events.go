@@ -23,8 +23,11 @@ type Events struct {
 	event_hosts        []EventHost
 }
 
-func (c *models.Client) GetGroupEvents(desc bool, fields []string, page int, scroll models.Scroll, status []models.EventStatus) (events Events, error) {
-	v := c.urlValues()
+type EventClient struct {
+	*models.Client
+}
+
+func (c *EventClient) GetGroupEvents(desc bool, fields []string, page int, scroll models.Scroll, status []models.EventStatus) (events *Events, e error) {
 
 	return nil, nil
 }
